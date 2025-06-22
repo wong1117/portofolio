@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Wong | Senior Developer & System Architect</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020C1B; /* Biru malam yang lebih dalam */
+            color: #8892B0; /* Warna teks abu-abu lembut */
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .text-lightest-slate { color: #CCD6F6; }
+        .text-slate { color: #8892B0; }
+        .accent-color { color: #64FFDA; }
+        .bg-navy { background-color: #0A192F; }
+        .bg-light-navy { background-color: #112240; }
+
+        /* Glassmorphism Effect for Navbar */
+        .glass-nav {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* High-Impact CTA Button */
+        .btn-cta {
+            background-color: #64FFDA;
+            color: #0A192F;
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            background-color: #0A192F;
+            color: #64FFDA;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Section Title Styling */
+        .section-heading::after {
+            content: "";
+            display: block;
+            position: relative;
+            top: -5px;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: #233554;
+        }
+
+        /* Staggered Animation */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Active Nav Link Styling */
+        .nav-link.active {
+            color: #64FFDA;
+        }
+        
+        /* Side Social Rail */
+        .social-rail {
+            position: fixed;
+            bottom: 0;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .social-rail::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 90px;
+            background-color: #8892B0;
+            margin-top: 1rem;
+        }
+        .social-rail a:hover svg {
+            color: #64FFDA;
+            transform: translateY(-3px);
+        }
+        .social-rail svg {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Header / Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold accent-color z-10">AW</a>
+            <div class="hidden md:flex items-center space-x-8 text-lightest-slate">
+                <a href="#about" class="nav-link hover:accent-color transition-colors duration-300">About</a>
+                <a href="#experience" class="nav-link hover:accent-color transition-colors duration-300">Experience</a>
+                <a href="#projects" class="nav-link hover:accent-color transition-colors duration-300">Work</a>
+                <a href="#contact" class="nav-link hover:accent-color transition-colors duration-300">Contact</a>
+            </div>
+            <a href="https://t.me/codingser" target="_blank" class="hidden md:inline-block px-5 py-2 border border-[#64FFDA] text-[#64FFDA] rounded-md hover:bg-cyan-300/10 transition-all duration-300">
+                Hire Me
+            </a>
+        </nav>
+    </header>
+
+    <!-- Left Social Rail -->
+    <div class="social-rail hidden lg:flex">
+        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github text-slate"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin text-slate"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter text-slate"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+    </div>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-start pt-24">
+            <div class="max-w-3xl">
+                <p class="text-lg accent-color mb-4 reveal-item">Hi, my name is</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-lightest-slate mb-4 reveal-item" style="transition-delay: 100ms;">Alex Wong.</h1>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate mb-6 reveal-item" style="transition-delay: 200ms;">I build resilient systems & uncover digital secrets.</h2>
+                <p class="max-w-xl text-slate mb-10 reveal-item" style="transition-delay: 300ms;">
+                    I'm a software engineer specializing in high-performance backend development and intricate system analysis. My passion lies in architecting robust solutions and ethically exploring the depths of software to enhance its security and efficiency.
+                </p>
+                <div class="reveal-item" style="transition-delay: 400ms;">
+                    <a href="https://t.me/codingser" target="_blank" class="btn-cta font-bold py-4 px-10 rounded-lg shadow-lg text-lg">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24 lg:py-32">
+            <h2 class="section-heading text-3xl font-bold text-lightest-slate mb-12 flex items-center reveal-item">
+                <span class="accent-color text-2xl font-mono mr-3">01.</span> About Me
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+                <div class="md:col-span-3 text-slate text-lg space-y-4 reveal-item" style="transition-delay: 100ms;">
+                    <p>Hello! I'm Alex. My journey into technology began not in a classroom, but with a disassembled family computer on my bedroom floor. I was driven by a single question: "How does this actually work?"</p>
+                    <p>That curiosity evolved into a professional obsession. Today, I channel it into designing and developing sophisticated web applications. I thrive in environments where I can tackle complex challenges, whether it's optimizing a database query for a high-traffic application or reverse-engineering a protocol to build a more efficient scraper.</p>
+                    <p>Here are a few of the core technologies I've been working with recently:</p>
+                    <ul class="grid grid-cols-2 gap-2 mt-4 font-mono text-sm">
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Node.js (TypeScript)</li>
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Python (FastAPI, Scrapy)</li>
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Golang</li>
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Reverse Engineering (Ghidra)</li>
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Docker & Kubernetes</li>
+                        <li class="flex items-center"><span class="accent-color mr-2">▹</span>Machine Learning (PyTorch)</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 flex justify-center reveal-item" style="transition-delay: 200ms;">
+                    <div class="w-64 h-64 md:w-72 md:h-72 rounded-lg relative group">
+                        <div class="absolute inset-0 bg-light-navy rounded-lg z-0 transform translate-x-4 translate-y-4 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-300"></div>
+                        <div class="absolute inset-0 border-2 border-accent-color rounded-lg z-10"></div>
+                        <img src="https://placehold.co/400x400/0A192F/E2E8F0?text=AW" alt="Avatar Alex Wong" class="absolute inset-0 w-full h-full object-cover rounded-lg z-0">
+                        <div class="absolute inset-0 bg-accent-color/20 rounded-lg z-20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Why Work With Me -->
+        <section id="experience" class="py-24 lg:py-32">
+            <h2 class="section-heading text-3xl font-bold text-lightest-slate mb-12 flex items-center reveal-item">
+                <span class="accent-color text-2xl font-mono mr-3">02.</span> Why Work With Me
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-light-navy p-8 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 reveal-item" style="transition-delay: 100ms;">
+                    <div class="text-accent-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+                    <h3 class="text-2xl font-bold text-lightest-slate mb-3">Performance-Driven</h3>
+                    <p class="text-slate">I write clean, efficient, and scalable code. My focus is not just on making things work, but on making them work exceptionally well under pressure.</p>
+                </div>
+                 <!-- Card 2 -->
+                <div class="bg-light-navy p-8 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 reveal-item" style="transition-delay: 200ms;">
+                    <div class="text-accent-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-lightest-slate mb-3">Security Mindset</h3>
+                    <p class="text-slate">With a background in reverse engineering, I approach every project with a deep understanding of potential vulnerabilities, ensuring robust and secure applications.</p>
+                </div>
+                 <!-- Card 3 -->
+                <div class="bg-light-navy p-8 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 reveal-item" style="transition-delay: 300ms;">
+                    <div class="text-accent-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-lightest-slate mb-3">Collaborative Partner</h3>
+                    <p class="text-slate">I believe the best results come from clear communication and collaboration. I see myself as a partner in your success, not just a developer.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 lg:py-32">
+            <h2 class="section-heading text-3xl font-bold text-lightest-slate mb-12 flex items-center reveal-item">
+                <span class="accent-color text-2xl font-mono mr-3">03.</span> Some Things I've Built
+            </h2>
+            <div class="space-y-16">
+                <!-- Project Item -->
+                <div class="grid grid-cols-12 gap-4 items-center reveal-item">
+                    <div class="col-span-12 md:col-span-7 lg:col-span-6 p-8 bg-light-navy rounded-lg shadow-lg z-10">
+                        <p class="text-sm accent-color font-mono mb-2">Featured Project</p>
+                        <h3 class="text-2xl font-bold text-lightest-slate mb-4 hover:accent-color transition-colors"><a href="#">Project Sentinel</a></h3>
+                        <p class="text-slate">A real-time web security monitoring system that utilizes intelligent web scraping and anomaly detection algorithms to identify potential threats and unauthorized changes on critical web assets.</p>
+                        <ul class="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-slate font-mono text-sm">
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>Scrapy</li>
+                            <li>WebSocket</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                        <div class="mt-5 flex items-center gap-4">
+                            <a href="#" class="text-slate hover:accent-color transition-colors"><i data-feather="github"></i></a>
+                            <a href="#" class="text-slate hover:accent-color transition-colors"><i data-feather="external-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-span-12 md:col-span-5 lg:col-span-6 h-full opacity-10 md:opacity-100 relative">
+                         <div class="absolute inset-0 bg-accent-color/10 rounded-lg group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                         <img src="https://placehold.co/600x400/0A192F/112240?text=Project+View" alt="Project Sentinel" class="rounded-lg object-cover w-full h-full">
+                    </div>
+                </div>
+                <!-- Add more projects in a similar or alternating pattern -->
+            </div>
+        </section>
+        
+        <!-- What Clients Say -->
+        <section id="testimonials" class="py-24 lg:py-32">
+             <h2 class="section-heading text-3xl font-bold text-lightest-slate mb-12 flex items-center justify-center reveal-item">
+                <span class="accent-color text-2xl font-mono mr-3">04.</span> What People Say
+            </h2>
+            <div class="max-w-3xl mx-auto text-center reveal-item">
+                <div class="text-accent-color mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </div>
+                <blockquote class="text-2xl font-medium text-lightest-slate italic">
+                    "Working with Alex was a game-changer. His deep technical expertise combined with his proactive communication made our complex project feel seamless. He didn't just deliver code; he delivered a rock-solid solution."
+                </blockquote>
+                <p class="mt-6 font-semibold text-slate">Jane Doe, CTO at TechCorp</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 lg:py-40 text-center">
+            <div class="max-w-xl mx-auto reveal-item">
+                <p class="accent-color font-mono mb-3">05. What’s Next?</p>
+                <h2 class="text-5xl font-bold text-lightest-slate mb-4">Get In Touch</h2>
+                <p class="text-slate mb-8">
+                    I'm currently seeking new opportunities and am open to collaboration on challenging projects. Whether you have a question or just want to say hi, my inbox is always open. I'll do my best to get back to you!
+                </p>
+                <a href="https://t.me/codingser" target="_blank" class="inline-block btn-cta font-bold py-4 px-10 rounded-lg shadow-lg text-lg">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate font-mono text-sm">
+        <p>Designed & Built by Alex Wong with <span class="accent-color">❤</span></p>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Particles.js Configuration
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 60, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#233554" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#233554", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false } },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } },
+            "retina_detect": true
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'glass-nav');
+            } else {
+                navbar.classList.remove('shadow-lg', 'glass-nav');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal-item');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Apply staggered delay based on element's order
+                    entry.target.style.transitionDelay = `${index * 50}ms`;
+                    entry.target.classList.add('visible');
+                    // No need to unobserve if you want animations to re-trigger on scroll up
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.05 });
+
+        revealElements.forEach(el => observer.observe(el));
+        
+        // Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
